@@ -7,25 +7,34 @@ from kivy.uix.textinput import TextInput #allows user to input text
 from kivy.uix.boxlayout import BoxLayout #arranges all child widgets in a box layout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.image import Image
+from kivy.uix.checkbox import CheckBox
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.lang import Builder #to include Kv file without issues with name.
 from kivy.properties import ListProperty, ObjectProperty, NumericProperty #to declare non-kivy entities as kivy properties
 from kivy.graphics.vertex_instructions import (Rectangle, Ellipse, Line) #canvas graphics
 from kivy.graphics.context_instructions import Color #canvas graphics
-from kivymd.app import MDApp
 from functools import partial
 from os import walk
+
+from firebase import firebase
 
 class LoginScreen(Screen):
     pass
 class HomeScreen(Screen):
     pass
+class CreateActivityScreen(Screen):
+    pass
+class JoinActivityScreen(Screen):
+    pass
 
 class MainApp(App):
+    def build(self):
+        self.firebase = firebase()
 
     def change_screen(self,screen_name):
-        screen_manager = self.root.ids['screen_manager']
-        screen_manager.current = screen_name
+        print(self.root)
+        screen_changer = self.root
+        screen_changer.current = screen_name
 
 if __name__=='__main__':
     MainApp().run()

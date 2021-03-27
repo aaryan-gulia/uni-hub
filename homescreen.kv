@@ -1,7 +1,50 @@
 <HomeScreen>:
   canvas:
-    Color:
-      rgb:255,255,255,1
     Rectangle:
       size: self.size
       pos: self.pos
+      source: "pictures/greenbg.png"
+
+  GridLayout:
+    cols:3
+    rows:1
+    pos_hint:{'top':1.0,'right':1.0}
+    size_hint:1.0,0.13
+    Button:
+      id:menu
+      name:"menu"
+      background_normal:"pictures/menuicon1.png"
+      background_down:"pictures/menuicon1.png"
+      size_hint:0.27,0.1
+    Image:
+      source:"pictures/logo1.png"
+    Button:
+      id:settings
+      name:"settings"
+      background_normal:"pictures/profile.png"
+      background_down:"pictures/profile.png"
+      size_hint:0.27,0.2
+
+
+  FloatLayout:
+    Button:
+      id: create_activity
+      pos_hint:{'top':0.80,'right':1.0}
+      size_hint:1.0,0.3
+      font_size: 50
+      text: "[b]Create a group activity[/b]"
+      markup: True
+      background_normal: "pictures/sportsequipment1.jpg"
+      background_down:"pictures/sportsequipment1copy.jpg"
+      on_release: app.change_screen("create_activity_screen")
+
+    Button:
+      id: join_activity
+      pos_hint:{'top':0.47,'right':1.0}
+      size_hint:1.0,0.3
+      font_size: 50
+      text: "[b]Join a group activity[/b]"
+      markup: True
+      background_normal: "pictures/womenplaying1.jpg"
+      background_down:"pictures/womenplaying1copy.jpg"
+      on_release: app.change_screen("join_activity_screen")

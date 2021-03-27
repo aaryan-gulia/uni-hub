@@ -1,13 +1,24 @@
 #:include loginscreen.kv
 #:include homescreen.kv
+#:include joinactivityscreen.kv
+#:include createactivityscreen.kv
 
 ScreenManager:
   id: screen_manager
+  name: "screen_manager"
+
+  HomeScreen:
+    name:"home_screen"
+    id:home_screen
 
   LoginScreen:
     name:"login_screen"
     id:login_screen
 
-  HomeScreen:
-    name:"home_screen"
-    id:home_screen
+  JoinActivityScreen:
+    name:"join_activity_screen"
+    id:join_activity_screen
+
+  CreateActivityScreen:
+    name:"create_activity_screen"
+    id:create_activity_screen

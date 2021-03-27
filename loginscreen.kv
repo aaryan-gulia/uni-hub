@@ -25,13 +25,6 @@
       font_size: 40
       multiline: False
 
-    <ForgotPassword@ButtonBehavior+Label>:
-      color: (0,0,0)
-      name:"forgot_password"
-      id:forgot_password
-      text:"[ref=some][u]forgot password?[/u][/ref]"
-      markup:True
-
     Label:
       id: login_message
       color: (1,0,0)
@@ -44,6 +37,8 @@
       size_hint: 0.4,0.07
       pos_hint:{"top": 0.4, "right": 0.7}
       source: "pictures/bgtexture2.jpg"
+      on_release:
+        app.firebase.signin(login_email.text, login_password.text)
 
     Button:
       text: "Sign Up"
@@ -52,3 +47,5 @@
       background_color:(0,0,0,0.8)
       size_hint: 0.4,0.07
       pos_hint:{"top": 0.3, "right": 0.7}
+      on_release:
+        app.firebase.signup(login_email.text, login_password.text)

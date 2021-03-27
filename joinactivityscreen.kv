@@ -1,0 +1,26 @@
+<JoinActivityScreen>:
+  canvas:
+    Rectangle:
+      size: self.size
+      pos: self.pos
+      source: "pictures/greenbg.png"
+
+  GridLayout:
+    cols:3
+    rows:1
+    pos_hint:{'top':1.0,'right':1.0}
+    size_hint:1.0,0.13
+    Button:
+      id:menu
+      name:"menu"
+      background_normal:"pictures/menuicon1.png"
+      background_down:"pictures/menuicon1.png"
+      size_hint:0.27,0.1
+    Image:
+      source:"pictures/logo1.png"
+    Button:
+      id:settings
+      name:"settings"
+      background_normal:"pictures/profile.png"
+      background_down:"pictures/profile.png"
+      size_hint:0.27,0.2
