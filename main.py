@@ -26,10 +26,14 @@ class CreateActivityScreen(Screen):
     pass
 class JoinActivityScreen(Screen):
     pass
+class ActivitySubmittedScreen(Screen):
+    pass
+class ProfileScreen(Screen):
+    pass
 
 class MainApp(App):
     def build(self):
-        self.firebase = firebase()
+        self.fb = firebase()
 
     def change_screen(self,screen_name):
         print(self.root)

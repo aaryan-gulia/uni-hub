@@ -22,6 +22,8 @@
       name:"back_home"
       background_normal:"pictures/logo1.png"
       background_down:"pictures/logo1.png"
+      on_release:
+        app.change_screen("home_screen")
 
     Button:
       id:settings
@@ -108,3 +110,8 @@
       color:(0,0,0)
       background_normal:"pictures/bgtexture1.jpg"
       background_down:"pictures/bgtexture1.jpg"
+      on_release:
+        activity = {"name":activity_name.text,"date":activity_date.text,"time":activity_time.text,
+        "location":activity_location.text,"dicription":activity_discription.text,"remote/in_person":[checkbox_remote.active,checkbox_inperson.active]}
+        check = app.fb.create_activity(activity)
+        if check: app.change_screen("activity_submitted_screen")

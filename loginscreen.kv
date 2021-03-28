@@ -3,7 +3,7 @@
     Rectangle:
       size: self.size
       pos: self.pos
-      source: "pictures/bgtexture1.jpg"
+      source: "pictures/greenbg.png"
 
   FloatLayout:
     TextInput:
@@ -38,7 +38,8 @@
       pos_hint:{"top": 0.4, "right": 0.7}
       source: "pictures/bgtexture2.jpg"
       on_release:
-        app.firebase.signin(login_email.text, login_password.text)
+        user_id = app.fb.signin(login_email.text, login_password.text)
+        if user_id: app.change_screen("home_screen")
 
     Button:
       text: "Sign Up"
@@ -48,4 +49,6 @@
       size_hint: 0.4,0.07
       pos_hint:{"top": 0.3, "right": 0.7}
       on_release:
-        app.firebase.signup(login_email.text, login_password.text)
+        app.fb.signup(login_email.text, login_password.text)
+        user_id = app.firebase.signin(login_email.text, login_password.text)
+        if user_id: app.change_screen("home_screen")

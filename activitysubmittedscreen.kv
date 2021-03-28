@@ -1,0 +1,41 @@
+<ActivitySubmittedScreen>:
+  canvas:
+    Rectangle:
+      size: self.size
+      pos: self.pos
+      source: "pictures/greenbg.png"
+
+  GridLayout:
+    cols:3
+    rows:1
+    pos_hint:{'top':1.0,'right':1.0}
+    size_hint:1.0,0.13
+    Button:
+      id:menu
+      name:"menu"
+      background_normal:"pictures/menuicon1.png"
+      background_down:"pictures/menuicon1.png"
+      size_hint:0.27,0.1
+
+    Button:
+      id:back_home
+      name:"back_home"
+      background_normal:"pictures/logo1.png"
+      background_down:"pictures/logo1.png"
+      on_release:
+        app.change_screen("home_screen")
+
+    Button:
+      id:settings
+      name:"settings"
+      background_normal:"pictures/profile.png"
+      background_down:"pictures/profile.png"
+      size_hint:0.27,0.2
+
+  FloatLayout:
+    Label:
+      text:"[u][b]New Activity Created[/b][/u]\nCheck your profile page to see all your activities"
+      markup:True
+      font_size:60
+      color:(0,0,0)
+      pos_hint:{"top": 1.3, "right": 1.0}
