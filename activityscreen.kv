@@ -1,0 +1,98 @@
+<ActivityScreen>:
+  canvas:
+    Rectangle:
+      size: self.size
+      pos: self.pos
+      source: "pictures/greenbg.png"
+
+  GridLayout:
+    cols:3
+    rows:1
+    pos_hint:{'top':1.0,'right':1.0}
+    size_hint:1.0,0.13
+    Button:
+      id:menu
+      name:"menu"
+      background_normal:"pictures/menuicon1.png"
+      background_down:"pictures/menuicon1.png"
+      size_hint:0.27,0.1
+
+    Button:
+      id:back_home
+      name:"back_home"
+      background_normal:"pictures/logo1.png"
+      background_down:"pictures/logo1.png"
+      on_release:
+        app.change_screen("home_screen")
+
+    Button:
+      id:settings
+      name:"settings"
+      background_normal:"pictures/profile.png"
+      background_down:"pictures/profile.png"
+      size_hint:0.27,0.2
+
+  ScrollView:
+    do_scroll_x:False
+    do_scroll_y:True
+    pos_hint:{'top':0.8,'right':1.0}
+    size_hint:1.0,0.6
+    GridLayout:
+      cols:1
+      id:scroll_gridlayout
+      cols:
+      size_hint_x:root.size_hint_x
+      spacing:10
+      Label:
+        text: root.activity_dict['name']
+        font_size:50
+        color:(0,0,0)
+        pos_hint:{"top": 1.3, "right": 1.0}
+        halign:'center'
+
+      Label:
+        text: 'Date: '+root.activity_dict['date']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 1.1, "right": 1.0}
+
+      Label:
+        text: "Time: "+root.activity_dict['time']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 0.9, "right": 1.0}
+        halign:'center'
+
+      Label:
+        text: "Remote/Inperson: "+root.activity_dict['remote/in_person']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 0.7, "right": 1.0}
+        halign:'center'
+
+      Label:
+        text: "Location: "+root.activity_dict['location']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 0.5, "right": 1.0}
+        multiline:True
+        halign:'center'
+        padding:10,10
+
+      Label:
+        text: "Discription: "+root.activity_dict['discription']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 0.3, "right": 1.0}
+        halign:'center'
+        multiline:True
+        padding:10,10
+
+      Label:
+        text: "Contact Activity Creater: "+root.activity_dict['email']
+        font_size:30
+        color:(0,0,0)
+        pos_hint:{"top": 0.1, "right": 1.0}
+        halign:'center'
+        multiline:True
+        padding:10,10

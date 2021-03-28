@@ -112,6 +112,6 @@
       background_down:"pictures/bgtexture1.jpg"
       on_release:
         activity = {"name":activity_name.text,"date":activity_date.text,"time":activity_time.text,
-        "location":activity_location.text,"dicription":activity_discription.text,"remote/in_person":[checkbox_remote.active,checkbox_inperson.active]}
+        "location":activity_location.text,"discription":activity_discription.text,"remote/in_person":[checkbox_remote.active,checkbox_inperson.active]}
         check = app.fb.create_activity(activity)
         if check: app.change_screen("activity_submitted_screen")
